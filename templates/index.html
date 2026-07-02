@@ -2,7 +2,23 @@
 
 {% block title %}Home{% endblock %}
 
+{% block styles %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
 {% block content %}
-        <h1 class="text-center">Welcome to KiraFlow!</h1>
-        <p class="text-center">This is the home page of KiraFlow.</p>
+        <div class="section-hero">
+                <h1 class="tagline">Stay focused. Stay organized. Stay in flow.</h1>
+        </div>
+        <div class="section">
+                <div class="tagline-sub">
+                        <p>One workspace to organize your tasks, manage your projects, and stay in flow.</p>
+                </div>
+                <form class="d-flex justify-content-center" action="{{ url_for('register') }}" method="get">
+                        <button class="btn-get-started" type="submit">Get Started for Free</button>
+                </form>
+                <div class="hero-caption">
+                        <p>Built to keep your workflow flowing.</p>
+                </div>
+        </div>
 {% endblock %}

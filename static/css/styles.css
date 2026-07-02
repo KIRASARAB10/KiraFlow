@@ -1,48 +1,315 @@
+/* ==========================
+   Design System
+   ========================== */
+
+:root {
+
+    /* Brand */
+    --primary-color: #4f6ef7;
+    --primary-hover: #3a57d4;
+
+    /* Background */
+    --background-color: #1a1a1a;
+    --surface-color: #252525;
+
+    /* Text */
+    --text-primary: #d0d0d0;
+    --text-heading: #f0f0f0;
+    --text-secondary: #aaaaaa;
+
+    /* Navbar */
+    --navbar-bg: #2d2d2d;
+    --navbar-text: #b0b0b0;
+    --navbar-text-hover: #e8e8e8;
+
+    /* Search */
+    --search-bg: rgba(255, 255, 255, .08);
+    --search-bg-focus: rgba(255, 255, 255, .2);
+    --search-border: rgba(255, 255, 255, .15);
+    --search-border-focus: rgba(255, 255, 255, .4);
+    --search-placeholder: rgba(255, 255, 255, .7);
+
+    /* Tables */
+    --table-header-bg: #333;
+    --table-border: #444;
+
+    /* Border Radius */
+    --border-radius: 12px;
+
+    /* Shadow */
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, .08);
+
+    /* Animation */
+    --transition-fast: .2s ease;
+}
+
+
+/* ==========================
+   Global Styles
+   ========================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #1a1a1a;
-    color: #d0d0d0;
+    background-color: var(--background-color);
+    color: var(--text-primary);
     font-size: large;
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     line-height: 1.5;
     margin: 0;
+    min-height: 100vh;
     text-align: left;
 }
 
-.navbar {
-    background-color: #2d2d2d !important;
-}
 
-nav .navbar-brand {
-    font-size: xx-large;
-    color: #b0b0b0 !important;
-}
+/* ==========================
+   Typography
+   ========================== */
 
-nav .navbar-brand:hover {
-    color: #e8e8e8 !important;
-    
-}
-
-.navbar .nav-link {
-    color: #b0b0b0 !important;
-}
-
-.navbar .nav-link:hover {
-    color: #e8e8e8 !important;
-}
-
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: center;
-    width: 100%;
-}
-
-h1, h2, h3 {
-    color: #f0f0f0;
+h1,
+h2,
+h3 {
+    color: var(--text-heading);
 }
 
 .text-muted {
-    color: #aaaaaa !important;   /* lighter muted text */
+    color: var(--text-secondary) !important;
+    font-size: .9rem;
+    margin-top: 36rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+
+/* ==========================
+   Sections
+   ========================== */
+
+.section {
+    padding: .5rem 2rem 1rem;
+}
+
+
+/* ==========================
+   Links
+   ========================== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main a:hover,
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================
+   Navbar
+   ========================== */
+
+.navbar-user {
+    background-color: var(--navbar-bg);
+    padding: .8rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.navbar-user .navbar-brand {
+    color: var(--navbar-text) !important;
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition: color var(--transition-fast);
+}
+
+.navbar-user .navbar-brand:hover {
+    color: var(--navbar-text-hover) !important;
+}
+
+.navbar-user .navbar-nav {
+    gap: .6rem;
+}
+
+.navbar-user .nav-link {
+    color: var(--navbar-text) !important;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.navbar-user .nav-link:hover,
+.navbar-user .nav-link:focus {
+    color: var(--navbar-text-hover) !important;
+}
+
+
+/* ==========================
+   Search Bar
+   ========================== */
+
+.navbar-search {
+    background: var(--search-bg);
+    border: 1px solid var(--search-border);
+    backdrop-filter: blur(12px);
+    color: var(--text-heading);
+}
+
+.navbar-search::placeholder {
+    color: var(--search-placeholder);
+}
+
+.navbar-search:focus {
+    background-color: var(--search-bg-focus);
+    color: var(--text-heading);
+    border-color: var(--search-border-focus);
+    box-shadow: none;
+}
+
+.navbar-search-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.navbar-search-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+
+/* ==========================
+   Layout
+   ========================== */
+
+.container {
+    margin-inline: auto;
+    padding-inline: 15px;
+}
+
+
+/* ==========================
+   Buttons
+   ========================== */
+
+button,
+.btn,
+input[type="submit"] {
+    text-align: center;
+    vertical-align: middle;
+    transition:
+        transform .15s ease-in-out,
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover {
+    transform: scale(1.02);
+}
+
+
+/* ==========================
+   Forms
+   ========================== */
+
+input,
+select,
+textarea {
+    border-radius: var(--border-radius);
+}
+
+label {
+    font-weight: 500;
+}
+
+
+/* ==========================
+   Tables
+   ========================== */
+
+.table {
+    color: var(--text-primary);
+    border-color: var(--table-border);
+}
+
+.table thead {
+    background-color: var(--table-header-bg);
+}
+
+
+/* ==========================
+   Cards
+   ========================== */
+
+.card {
+    background-color: var(--surface-color);
+    border: 1px solid currentColor;
+    border-radius: var(--border-radius);
+}
+
+
+/* ==========================
+   Utilities
+   ========================== */
+
+.rounded-lg {
+    border-radius: 1rem;
+}
+
+.shadow-soft {
+    box-shadow: var(--shadow-soft);
+}
+
+.text-soft {
+    color: var(--text-secondary);
+}
+
+
+/* ==========================
+   Images
+   ========================== */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ==========================
+   Text Selection
+   ========================== */
+
+::selection {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+
+/* ==========================
+   Scrollbar
+   ========================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
 }

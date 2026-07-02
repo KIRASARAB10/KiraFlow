@@ -1,0 +1,192 @@
+/* ==========================
+   Page
+   ========================== */
+
+body {
+    background-color: #fff;
+    color: #1a1a1a;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: large;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+    color: #1a1a1a;
+}
+
+.text-muted {
+    color: #332e2e !important;
+    font-size: .9rem;
+    margin-top: 36rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+
+/* ==========================
+   Design System
+   ========================== */
+
+:root {
+
+    /* Brand */
+    --primary-color: #4f6ef7;
+    --primary-hover: #3a57d4;
+
+    /* Typography */
+    --hero-font: "Inter", sans-serif;
+
+    /* Layout */
+    --hero-width: 850px;
+
+    /* Radius */
+    --button-radius: 999px;
+
+    /* Animation */
+    --transition-fast: .2s ease;
+
+    /* Shadow */
+    --button-shadow: 0 10px 25px rgba(79, 110, 247, .25);
+}
+
+/* ==========================
+   Guest Navbar
+   ========================== */
+
+.navbar-guest {
+    background: transparent;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+.navbar-guest .container {
+    max-width: 1200px;
+}
+
+.navbar-guest .navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition: color var(--transition-fast);
+}
+
+.navbar-guest .navbar-brand:hover {
+    color: var(--primary-color);
+}
+
+.navbar-guest .navbar-nav {
+    gap: .75rem;
+}
+
+.navbar-guest .nav-link {
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.navbar-guest .nav-link:hover,
+.navbar-guest .nav-link:focus {
+    color: var(--primary-color);
+}
+
+.navbar-guest .nav-link {
+    border: 1px solid #777;
+    border-radius: 999px;
+    background: transparent;
+    color: #000;
+    font-weight: 500;
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background-color var(--transition-fast);
+
+    min-width: 170px;
+    padding: .75rem 1.5rem;
+    text-align: center;
+}
+
+.navbar-guest .nav-link:hover,
+.navbar-guest .nav-link:focus {
+    border-color: #000;
+    background-color: rgba(0,0,0,.05);
+}
+
+.navbar-guest .nav-link:active {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+
+/* ==========================
+   Hero Section
+   ========================== */
+
+.section-hero {
+    max-width: var(--hero-width);
+    margin-inline: auto;
+    padding-top: 8rem;
+    text-align: center;
+}
+
+.tagline {
+    margin-bottom: 2rem;
+    color: #000;
+    font-family: var(--hero-font);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.tagline-sub {
+    color: #111;
+    font-family: var(--hero-font);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.hero-caption {
+    color:#555;
+    font-family: var(--hero-font);
+    font-size: .95rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 1.5rem;
+    text-align: center;
+}
+
+/* ==========================
+   Get Started Button
+   ========================== */
+
+.btn-get-started {
+    margin-top: 2rem;
+    padding: 16px 36px;
+
+    min-width: 220px;
+
+    border: none;
+    border-radius: var(--button-radius);
+
+    background-color: var(--primary-color);
+    color: #fff;
+
+    cursor: pointer;
+
+    font-family: var(--hero-font);
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.btn-get-started:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--button-shadow);
+}
