@@ -18,5 +18,8 @@ flask_session/
 # VS Code
 .vscode/
 
+#datebase
+instance/
+
 # Other files
 dfasckear
